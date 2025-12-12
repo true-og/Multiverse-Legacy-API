@@ -26,7 +26,7 @@ public final class MultiverseCore extends MockPlugin implements Core, MVPlugin {
 
 	@Override
 	public void onEnable() {
-		MultiverseCoreApi api = MultiverseCoreApi.get();
+		final MultiverseCoreApi api = MultiverseCoreApi.get();
 		legacyDestinationFactory = new DestinationFactory(api.getDestinationsProvider());
 		legacyWorldManager = new WorldManager(api.getWorldManager(), api.getServiceLocator().getService(PlayerWorldTeleporter.class));
 		legacyAnchorManager = new AnchorManager(api.getAnchorManager());
